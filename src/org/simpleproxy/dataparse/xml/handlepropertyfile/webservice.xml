@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<wsdl>http://10.162.64.123:8888/esb/EOMSBusFaultService/0?authcode=SlRfVUNJQVAjQGF1dGhAI0ZLWEh0SXBO</wsdl>
+	<requestSameSpace type = "xml">
+		<![CDATA[:variableSpace1:]]>
+	</requestSameSpace>
+	<variableSpace >
+		<variableSpaceSon name ="variableSpace1" type = "String">
+			<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+		    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.eomtm.metarnet.com">
+			   <soapenv:Header/>
+			   <soapenv:Body>
+			      <IsAlive>
+			         <serialNo>:serialNo:</serialNo>
+			         <serCaller>:serCaller:</serCaller>
+			      </IsAlive>
+			   </soapenv:Body>
+			</soapenv:Envelope>
+			]]>
+		</variableSpaceSon>
+	</variableSpace>
+		 
+	<!-- 调用测试操作 -->
+	<service name="WSISALIVE"  method="IsAlive" desc="调用测试操作" rresponseRoot= "CAPRoot" rspcode="ResponseStatus" rspdesc="FaultInfo">
+		<field name="serialNo" variableSpaceSon = "variableSpace1" rule="Date[yyyyMMddHHmmss]&Num[4]" desc="流水号" />
+		<field name="serCaller" variableSpaceSon = "variableSpace1" desc="" />
+	</service>
+
+</WebService>

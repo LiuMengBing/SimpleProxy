@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JsonService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<appKey>9e1ca76b2f547bd9c1eb518316cd41bc</appKey>
+	<appId>501325</appId>
+	<version>1</version>
+	<service name="serviceName" url="http://134.160.36.240:20110/oppf?" 
+						connectionTimeout="60000" socketTimeout="60000" desc="服务描述">
+		<timestamp rule="Date[yyyyMMddHHmmss]" reqSerialNo="true"></timestamp>
+		<apptx defaultVal="22736920" ></apptx>
+		<msg>
+			{
+				"operatorId":":operatorId:",
+				"province":":province:",
+				"city":":city:",
+				"productInfo":[{
+					"productId":":productId:",
+					"productMode":":productMode:",
+					"optType":":optType:",
+					"packageElement":[{
+						"packageId":":packageId:",
+						"elementId":":elementId:",
+						"elementType":":elementType:",
+						"modType":":modType:"
+					}]
+				}],
+				"recomPersonId":":recomPersonId:",
+				"recomPersonName":":recomPersonName:"
+			}
+		</msg>
+	</service>
+
+</JsonService>
